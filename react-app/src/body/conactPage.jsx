@@ -4,6 +4,7 @@ import Form from '../components/formContact';
 import '../style/contact.css';
 import '../App.css';
 import SendBtn from '../components/btnSend';
+import Footer from './footer'
 
 
 function contactPage() {
@@ -19,6 +20,7 @@ function contactPage() {
             </div>
             <SendBtn></SendBtn> 
         </div>
+        <Footer></Footer>
         </>
 
     );

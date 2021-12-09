@@ -3,6 +3,7 @@ import BtnMusics from '../components/buttonMusics'
 import BtnSongs from '../components/btnSongs'
 import '../App.css';
 import { Link } from 'react-router-dom'
+import Footer from './footer'
 
 function Body() {
     return (
@@ -26,7 +27,7 @@ function Body() {
                         <h1 className = 'textField textDescription'>A variety of audio assets in just one place</h1>
                         <p className = 'textDescription'>OpenGameMusic is one of the most original and affordable music and sound effects libraries on the web, designed for and created by real audio professionals. Our main focus  has been to offer royalty-free background music which has been edited and optimized for easy deployment into Videos, Slideshows, Advertising, but also Video Games and Animation. We later introduced a whole new category dedicated to professional sound effects for Videos, Trailers, TV / Radio, and other broadcast productions.</p>
                             <div className = 'btn'>
-                                <div className = 'btnFreeMusics'>
+                                <div className = 'btnFreeMusics'>                                 
                                     <Link to="/royalty-free-music">
                                         <BtnMusics></BtnMusics>
                                     </Link>
@@ -66,33 +67,7 @@ function Body() {
                         </div>
                 </div>
             </section>
-            <footer>
-             <div className = 'footer'>
-                <div className = 'wrapper'>
-                    <div className = 'footerGrid'>
-                    <div>
-                        <h3>Exclusive Content Only</h3>
-                        </div>
-                    <div>
-                        <h3>Free Downloads Available</h3>
-                        </div>
-                    <div>
-                        <h3>Seamless Looping Audio</h3>
-                        
-                    </div>
-                    <div>                       
-                        <h3>Multiple Music Edits</h3>
-                    </div>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div className = 'social'>
-                    
-                </div>
-            </div>   
-                
-            </footer>    
+            <Footer></Footer>
         </div>
         </>
     );

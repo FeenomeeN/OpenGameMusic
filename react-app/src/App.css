@@ -32,8 +32,9 @@ P {
 
 .description {
   margin-top: 50px;
-  background-color: rgba(70, 68, 66, 0.158);
+  background-color: rgb(235, 231, 231);
   background-size: 100%;
+  box-shadow: 0px 8px 8px 8px #ddd;
   height: 720px;
   display: grid;
   grid-template-columns: repeat(2,1fr);

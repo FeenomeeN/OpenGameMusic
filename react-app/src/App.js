@@ -5,8 +5,20 @@ import Menu from './header/header'
 import Body from './body/mainPage'
 import SoundCategory from './body/soundsCategory'
 import Contact from './body/conactPage'
+import TMP from './body/templateForGenre'
+import Login from './body/account'
+import Reg from './body/registration'
+import PrivateRoute from "./rootes/privateRoote";
+import GuestRoute from "./rootes/guestRoute";
+import Profile from "./body/profile";
+import useAuth from './hooks/useAuth';
+//import { AuthRoute, GuestRoute, MaybeAuthRoute } from 'eazy-auth'
+
+
 
 function App() {
+  const auth = useAuth();
+  
   return (
     <>
     
@@ -14,10 +26,32 @@ function App() {
       <Menu/>
             <Routes>
                 <Route exect path="/" element={<Body/>}/>
+                
+                <PrivateRoute path="/profile" element={<Profile />}>
+                </PrivateRoute>
+                <GuestRoute path='/login' element={<Login />}>
+                </GuestRoute>
+                <GuestRoute path="/registration" element={<Reg />}>   
+                </GuestRoute>
+              
+                {/* <Route path="/login" element={<Login/>}/>
+                <Route path="/registration" element={<Reg/>}/> */}
                 <Route path="/royalty-free-music" element={<MusicCategory/>}/>
-                <Route path="/sound-effects-for-videos" element={<SoundCategory/>}/>
+                <Route path="/royalty-free-music/action-and-trailer" element={<TMP/>}/>
+                <Route path="/royalty-free-music/epic-and-orchestral" element={<MusicCategory/>}/>
+                <Route path="/royalty-free-music/rock-and-energetic" element={<MusicCategory/>}/>
+                <Route path="/royalty-free-music/electronic-and-edm" element={<MusicCategory/>}/>
+                <Route path="/royalty-free-music/easy-listening-music" element={<MusicCategory/>}/>
+                <Route path="/royalty-free-music/acoustic-and-piano" element={<MusicCategory/>}/>
+                <Route path="/royalty-free-music/game-music" element={<MusicCategory/>}/>
+                <Route path="/royalty-free-music/movie" element={<MusicCategory/>}/>
+                <Route path="/sound-effects-for-videos/" element={<SoundCategory/>}/>
+                <Route path="/sound-effects-for-videos/riser-and-crescendo" element={<SoundCategory/>}/>
+                <Route path="/sound-effects-for-videos/boom-and-slam" element={<SoundCategory/>}/>
+                <Route path="/sound-effects-for-videos/ambience-and-indoor" element={<SoundCategory/>}/>
+                <Route path="/sound-effects-for-videos/ambience-and-outdoor" element={<SoundCategory/>}/>
                 <Route path="/contact" element={<Contact/>}/>
-                <Route path="*" element={<h2>Ресурс не найден</h2>} />
+                <Route path="*" element={<h2>Page not found</h2>} />
             </Routes>
 
         </Router> 
