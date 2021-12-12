@@ -37,14 +37,14 @@ function App() {
                 {/* <Route path="/login" element={<Login/>}/>
                 <Route path="/registration" element={<Reg/>}/> */}
                 <Route path="/royalty-free-music" element={<MusicCategory/>}/>
-                <Route path="/royalty-free-music/action-and-trailer" element={<TMP/>}/>
-                <Route path="/royalty-free-music/epic-and-orchestral" element={<MusicCategory/>}/>
-                <Route path="/royalty-free-music/rock-and-energetic" element={<MusicCategory/>}/>
-                <Route path="/royalty-free-music/electronic-and-edm" element={<MusicCategory/>}/>
-                <Route path="/royalty-free-music/easy-listening-music" element={<MusicCategory/>}/>
-                <Route path="/royalty-free-music/acoustic-and-piano" element={<MusicCategory/>}/>
-                <Route path="/royalty-free-music/game-music" element={<MusicCategory/>}/>
-                <Route path="/royalty-free-music/movie" element={<MusicCategory/>}/>
+                <PrivateRoute path="/royalty-free-music/action-and-trailer" element={<TMP/>}/>
+                <Route path="/royalty-free-music/epic-and-orchestral" element={<TMP/>}/>
+                <Route path="/royalty-free-music/rock-and-energetic" element={<TMP/>}/>
+                <Route path="/royalty-free-music/electronic-and-edm" element={<TMP/>}/>
+                <Route path="/royalty-free-music/easy-listening-music" element={<TMP/>}/>
+                <Route path="/royalty-free-music/acoustic-and-piano" element={<TMP/>}/>
+                <Route path="/royalty-free-music/game-music" element={<TMP/>}/>
+                <Route path="/royalty-free-music/movie" element={<TMP/>}/>
                 <Route path="/sound-effects-for-videos/" element={<SoundCategory/>}/>
                 <Route path="/sound-effects-for-videos/riser-and-crescendo" element={<SoundCategory/>}/>
                 <Route path="/sound-effects-for-videos/boom-and-slam" element={<SoundCategory/>}/>

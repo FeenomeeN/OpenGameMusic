@@ -38,6 +38,7 @@ P {
   height: 720px;
   display: grid;
   grid-template-columns: repeat(2,1fr);
+  
 }
 
 .textDescription {

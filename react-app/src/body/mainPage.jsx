@@ -4,6 +4,7 @@ import BtnSongs from '../components/btnSongs'
 import '../App.css';
 import { Link } from 'react-router-dom'
 import Footer from './footer'
+import Background from "../image/20.png"
 
 function Body() {
     return (

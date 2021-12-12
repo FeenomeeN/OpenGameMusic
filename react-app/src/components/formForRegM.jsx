@@ -11,7 +11,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import validationSchema from "../services/validationForReg";
 import api from "../services/allEndpoints";
 import useAuth from "../hooks/useAuth";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 const useStyles = makeStyles((theme) => ({
@@ -23,11 +23,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
+
 function Registration() {
+  const navigate = useNavigate();
   const classes = useStyles();
   const [isLoading, setIsLoading] = useState(false);
   const auth = useAuth();
-
   const {
     control,
     handleSubmit,
@@ -38,6 +40,7 @@ function Registration() {
   });
 
   const onSubmit = async (data) => {
+    
     try {
       setIsLoading(true);
       await api.auth.registration(data);
@@ -57,6 +60,7 @@ function Registration() {
       }
     } finally {
       setIsLoading(false);
+      navigate('/profile');
     }
   };
 

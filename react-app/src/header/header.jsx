@@ -19,7 +19,7 @@ export default function ButtonAppBar() {
   const navigate = useNavigate();
   const onLogOut = () => {
     auth.logOut();
-    //navigate.push("/login");
+    navigate('/login');
   };
   return (
     <>

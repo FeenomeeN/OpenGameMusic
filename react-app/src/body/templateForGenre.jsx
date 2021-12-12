@@ -1,49 +1,62 @@
 import * as React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import '../App.css';
+import useAuth from '../hooks/useAuth';
 import { increase, decrease } from '../redux/action';
+import Footer from './footer'
+
 let count = 0;
 let countDel = 0;
 let newDiv;
 let my_div = newDiv = null;
 
 function addElement() {
-        count++;
-      newDiv = document.createElement("p");
-      newDiv.id = count;
-      newDiv.innerHTML = "template";
+    count++;
+    newDiv = document.createElement(createElementF());
+    newDiv.id = count;
+    newDiv.innerHTML = "Music";
     my_div = document.getElementById("inner");
     my_div.parentNode.insertBefore(newDiv, my_div);
+    console.log("add", newDiv);
+}
+
+function createElementF() {
+    return "p";
 }
 
 function deleteElement() {
-    if(count === countDel){
+    if (count === countDel) {
         my_div = document.getElementById(count);
-    }else{
-        count--;
-        my_div = document.getElementById(count); 
+    } else {
+        my_div = document.getElementById(count--);
     }
-    my_div.parentNode.removeChild(newDiv, my_div);
-  
+    console.log("delete", my_div);
+    my_div.parentNode.removeChild(my_div, newDiv);
 }
+
 export default function TemplateForGenre() {
+    const auth = useAuth();
     const dispatch = useDispatch();
-    const OnAddHandler = () =>{
+    const OnAddHandler = () => {
         dispatch(increase());
         addElement();
     }
-    const onSubHAndler = () =>{
+    const onSubHAndler = () => {
         dispatch(decrease());
         deleteElement();
     }
-    const count = useSelector(state=>state.CountReducer).count;
-    return(<>
-        <div className = 'wrapper'>
+    const count = useSelector(state => state.CountReducer).count;
+    return (<>
+        <div className='wrapper'>
             <button onClick={OnAddHandler}> add </button>
-            <button onClick={onSubHAndler}> delete </button>
-            <div className = 'item' style = {{ display: 'grid' , gridAutoRows:'repeat(12,1fr)' }}>
-                <p id="inner" style={{color:'black', width:'100px'}}>{count}</p>
+            {auth.isLoaded && (auth.isAdmin ? (
+                <button onClick={onSubHAndler}> delete </button>
+            ):( <p>ds</p>
+            ))}
+            <div className='item' style={{ display: 'grid', gridAutoRows: 'repeat(12,1fr)' }}>
+                <p id="inner" style={{ color: 'black', width: '100px' }}>{count}</p>
             </div>
         </div>
+        <Footer></Footer>
     </>);
 }

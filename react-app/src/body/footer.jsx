@@ -11,17 +11,20 @@ export default function footer() {
                 <div className = 'wrapper'>
                     <div className = 'footerGrid'>
                         <div>
-                            <h3>Exclusive Content Only</h3>
+                            <h3 style={{color:"white"}}>Exclusive Content Only</h3>
+                            <p></p>
                             </div>
                         <div>
-                            <h3>Free Downloads Available</h3>
+                            <h3 style={{color:"white"}}>Free Downloads Available</h3>
+                            <p></p>
                             </div>
                         <div>
-                            <h3>Seamless Looping Audio</h3>
-                            
+                            <h3 style={{color:"white"}}>Seamless Looping Audio</h3>
+                            <p></p> 
                         </div>
                         <div>                       
-                            <h3>Multiple Music Edits</h3>
+                            <h3 style={{color:"white"}}>Multiple Music Edits</h3>
+                            <p></p>
                         </div>
                     </div>
                     <div className = 'icons'>
@@ -37,7 +40,7 @@ export default function footer() {
                     <div style = {{position: 'absolute', top:'0', left:'50%', marginLeft: '-50vw', width: '100vw', height: '1px', backgroundColor: 'white'}}></div>
                 </div>
                 <div className = 'wrapper'>
-                    <p>OpenGameMusic.com by FenomeN.Copyright © 2021-2021 All rights reserved.</p>
+                    <p>OpenGameMusic.com by FenomeN. Copyright © 2021-2021 All rights reserved.</p>
                 </div>
             </div>
             <div>

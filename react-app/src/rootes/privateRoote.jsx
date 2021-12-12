@@ -1,9 +1,9 @@
-import { Route, Link } from "react-router-dom";
+import { Route, Link, useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 
 function PrivateRoute({ children, ...rest }) {
   let auth = useAuth();
-
+  const navigate = useNavigate();
   return (
     <Route
       {...rest}
@@ -14,12 +14,7 @@ function PrivateRoute({ children, ...rest }) {
         return auth.user ? (
           children
         ) : (
-          <Link
-            to={{
-              pathname: "/login",
-              search: url.toString(),
-            }}
-          />
+          navigate('/login')
         );
       }}
     />

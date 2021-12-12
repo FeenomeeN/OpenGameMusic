@@ -12,7 +12,7 @@ function GuestRoute({ children, ...rest }) {
         const url = new URLSearchParams(navigate.location.search.slice(1));
 
         return auth.user ? (
-          navigate("/",{state:{from:{pathname:"/login"}}})
+          navigate('/')
         ) : (
           children
         );

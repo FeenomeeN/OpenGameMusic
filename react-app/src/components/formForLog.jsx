@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import validationSchema from "../services/validatiom";
 import api from "../services/allEndpoints";
@@ -29,6 +29,7 @@ function Login() {
   const classes = useStyles();
   const [isLoading, setIsLoading] = useState(false);
   const auth = useAuth();
+  const navigate = useNavigate();
 
   const {
     control,
@@ -58,6 +59,7 @@ function Login() {
       }
     } finally {
       setIsLoading(false);
+      navigate('/');
     }
   };
 

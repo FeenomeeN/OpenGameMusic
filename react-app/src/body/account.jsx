@@ -5,16 +5,16 @@ import '../style/registration.css'
 import Footer from './footer'
 
 export default function account() {
-    return(<>
-    <div className = 'wrapper'>
-            <div className = 'login'>
-                <div className = 'acc'>
+    return (<>
+        <div className='wrapper'>
+            <div className='login'>
+                <div className='acc'>
                     <FormLog></FormLog>
                 </div>
             </div>
-            
+
         </div>
-        </>
+    </>
 
     );
 }
