@@ -60,7 +60,6 @@ export default function ButtonAppBar() {
     </PopupState>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           
-          <Button  color="inherit">FAQs</Button>
           
           <Link href="/contact" underline="none" color="inherit" >
           <Button color="inherit">Contact</Button>

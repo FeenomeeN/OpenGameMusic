@@ -18,20 +18,28 @@ function addElement() {
     my_div = document.getElementById("inner");
     my_div.parentNode.insertBefore(newDiv, my_div);
     console.log("add", newDiv);
+    save_element();
 }
 
+function save_element() {
+    const parsed = newDiv.innerHTML;
+    localStorage.setItem(count, parsed);
+    localStorage.setItem("count", count);
+}
+function getElement() {
+    const reb = localStorage.getItem('count');
+    return reb;
+}
 function createElementF() {
+    
     return "p";
 }
 
 function deleteElement() {
-    if (count === countDel) {
-        my_div = document.getElementById(count);
-    } else {
-        my_div = document.getElementById(count--);
-    }
+    my_div = document.getElementById(count--);
     console.log("delete", my_div);
     my_div.parentNode.removeChild(my_div, newDiv);
+    //save_element();
 }
 
 export default function TemplateForGenre() {
@@ -60,3 +68,5 @@ export default function TemplateForGenre() {
         <Footer></Footer>
     </>);
 }
+
+//localStorage.clear();
